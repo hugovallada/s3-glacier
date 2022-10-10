@@ -6,12 +6,12 @@ resource "aws_s3_bucket" "glacier" {
     prefix  = var.glacier_prefix
 
     transition {
-      days          = 0
+      days          = 30
       storage_class = "STANDARD_IA"
     }
 
     transition {
-      days          = 1
+      days          = 31
       storage_class = "GLACIER"
     }
   }
